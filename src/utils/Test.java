@@ -5,21 +5,30 @@
  */
 package utils;
 
+<<<<<<< HEAD
 import java.io.File;
 import java.io.FileNotFoundException;
 import models.ParseManager;
 //import java.time.YearMonth;
 //import java.time.format.DateTimeFormatter;
+=======
+import constants.Constant;
+
+import java.time.YearMonth;
+import java.time.format.DateTimeFormatter;
+import java.util.TreeMap;
+
+>>>>>>> 221a46e (Gradle but not understand anything, I'm gonna roll back)
 import models.Report;
 
 /**
- *
  * @author letie
  */
 public class Test {
 
     public static void main(String[] args) throws FileNotFoundException {
         //yearmonth parser test
+<<<<<<< HEAD
 //        YearMonth ym = YearMonth.parse("122015", DateTimeFormatter.ofPattern("MMyyyy"));
 //        System.out.println(ym.getMonth() + " " + ym.getYear());
 //        System.out.println(ym.format(DateTimeFormatter.ofPattern("MMyyyy")));
@@ -35,4 +44,11 @@ public class Test {
 //Validator test
 //        System.out.println(Validator.trimParentheses("(hihifef.)"));
 //        System.out.println(JSONParser.parseToMap(""));
+=======
+        YearMonth ym = YearMonth.parse("122015", DateTimeFormatter.ofPattern("MMyyyy"));
+        System.out.println(ym.getMonth() + " " + ym.getYear());
+        System.out.println(ym.format(DateTimeFormatter.ofPattern("MMyyyy")));
+        Report r = new Report("PLP", "122015");
+    }
+>>>>>>> 221a46e (Gradle but not understand anything, I'm gonna roll back)
 }
