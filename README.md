@@ -8,7 +8,7 @@ A dummy project to extract data from financial reports companies, in demand MAX2
 `Step 5`: Replace my `result.xlsx` file with yours. <br>
 `Step 6`: Run `Main` and enter all your company stock symbol (**order must be same with your folder's one**). <br>
 ## P.S.
-*This is just a basic project for me not to type data cell by cell got from Google (almost 1000 cells with 9-digit-numbers each, suck!). I know the code so suck, and I can't understand it even after 2 days 😂*.
+*This is just a basic project for me not to type data cell by cell got from Google (almost 1000 cells with 9-digit-numbers each, suck!) so I know the code is so dump, cause even me was hard to understand it after about 2 days. 😂*.
 
 
 
