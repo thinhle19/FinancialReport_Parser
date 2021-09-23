@@ -4,7 +4,7 @@ A dummy project to extract data from financial reports companies, in demand MAX2
 `Step 1`: Clone this project to your machine.<br>
 `Step 2`: Screenshot table from the report then extract its data to an .xlsx file (here I use [Nanonets](app.nanonets.com)).<br>
 `Step 3`: Download extracted data, categorizing by compnany's stock symbol and time period (ex: `PLP_122012.xlsx`). <br>
-`Step 4`: Create 2 folders `XXX/csv/` in folder `financial_data/` and put all your company's file in. Same with other companies. <br>
+`Step 4`: Create 2 folders `XXX/csv/` in folder `financial_data/` and put all your company's files in. Same with other companies. <br>
 `Step 5`: Replace my `result.xlsx` file with yours. <br>
 `Step 6`: Run `Main` and enter all your company stock symbol (**order must be same with your folder's one**). <br>
 ## P.S.
