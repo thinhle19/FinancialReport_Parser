@@ -36,8 +36,10 @@ public class ParseManager {
             -> r1.monthYearPeriod.compareTo(r2.monthYearPeriod);
 
     public ParseManager() {
-//        companies.add(new Company("PLP", "PLP"));
-//        companies.add(new Company("PLX", "PLX"));
+        companies.add(new Company("PLP", "PLP"));
+        companies.add(new Company("PLX", "PLX"));
+        companies.add(new Company("PME", "PME"));
+        companies.add(new Company("PMG", "PMG"));
     }
 
     public void getAllComapnyReports() {
@@ -117,6 +119,7 @@ public class ParseManager {
             }
             try (FileOutputStream outputStream = new FileOutputStream(dataPath)) {
                 wb.write(outputStream);
+                wb.close();
             }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(ParseManager.class.getName()).log(Level.SEVERE, null, ex);
