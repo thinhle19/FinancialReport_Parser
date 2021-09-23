@@ -10,11 +10,14 @@ package constants;
  * @author letie
  */
 public class Constant {
-    public static final String ROOT_PATH = "D:/Programming/#Java/Projects/financial_data/csv";
-    public static final int FIELD_NUM = 25;
+    public static final String ROOT_PATH = "./financial_data";
+    public static final int FIELD_NUM = 26;
+    public static final String API_KEY = "p8hFJTY3E7C3G23IP4AW7PRx7i3NXKq2rJxojz0h";
 
     public static final String CURRENT_ASSETS_100 = "100";
-    public static final String CASH_100 = "111";
+    public static final String CASH_111 = "111";
+    public static final String CASH_EQUI_110 = "110";
+
     public static final String SHORT_TERM_INVESTMENTS_120 = "120";
     public static final String ACCOUNT_RECEIVABLE_131 = "131";
     public static final String INVENTORY_140 = "140";
@@ -25,8 +28,6 @@ public class Constant {
     public static final String CURRENT_LIABILITIES_310 = "310";
     public static final String SHORT_TERM_DEBT_320 = "320";
     public static final String OWNER_EQUITY_400 = "400";
-    //in case there's no 411a or 411b
-    public static final String OWENER_CONTRIBUTE_411 = "411";
     public static final String TOTAL_COMMON_SHARE_411A = "411a";
     public static final String PREFERRED_EQUITY_411B = "411b";
     public static final String EARN_BEFORE_TAX_50 = "50";
@@ -43,7 +44,8 @@ public class Constant {
 
     public static final String[] FIELD_CODE_LIST = {
         CURRENT_ASSETS_100,
-        CASH_100,
+        CASH_111,
+        CASH_EQUI_110,
         SHORT_TERM_INVESTMENTS_120,
         ACCOUNT_RECEIVABLE_131,
         INVENTORY_140,

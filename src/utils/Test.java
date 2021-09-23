@@ -5,10 +5,11 @@
  */
 package utils;
 
-import constants.Constant;
-import java.time.YearMonth;
-import java.time.format.DateTimeFormatter;
-import java.util.TreeMap;
+import java.io.File;
+import java.io.FileNotFoundException;
+import models.ParseManager;
+//import java.time.YearMonth;
+//import java.time.format.DateTimeFormatter;
 import models.Report;
 
 /**
@@ -17,23 +18,21 @@ import models.Report;
  */
 public class Test {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         //yearmonth parser test
-        YearMonth ym = YearMonth.parse("122015", DateTimeFormatter.ofPattern("MMyyyy"));
-        System.out.println(ym.getMonth() + " " + ym.getYear());
-        System.out.println(ym.format(DateTimeFormatter.ofPattern("MMyyyy")));
-        Report r = new Report("PLP", "122015");
-        
-        r.parseData();
-        
+//        YearMonth ym = YearMonth.parse("122015", DateTimeFormatter.ofPattern("MMyyyy"));
+//        System.out.println(ym.getMonth() + " " + ym.getYear());
+//        System.out.println(ym.format(DateTimeFormatter.ofPattern("MMyyyy")));
+//        Report r = new Report("PLP", "122015", "PLP_122015.xlsx");
+//        System.out.println(r.dataPath);
+//        System.out.println(r.detailData.keySet());
+        XLSXParser.parseToMap("D:\\Programming\\#Java\\Projects\\FinancialAutoReport\\financial_data\\PLP\\csv\\PLP_122020.xlsx");
+        ParseManager pm = new ParseManager();
+        pm.writeAllCompanyReport();
+        pm.writeDataToMainFile("D:\\Programming\\#Java\\Projects\\FinancialAutoReport\\financial_data\\result.xlsx");
     }
-}
-class MyMap extends TreeMap<String,String> {
 
-    public MyMap() {
-        for(int i = 0; i < Constant.FIELD_CODE_LIST.length; i++) {
-            
-        }
-    }
-    
+//Validator test
+//        System.out.println(Validator.trimParentheses("(hihifef.)"));
+//        System.out.println(JSONParser.parseToMap(""));
 }

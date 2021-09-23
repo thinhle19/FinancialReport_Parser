@@ -15,7 +15,7 @@ import java.util.TreeMap;
 public class ReportFieldsMap extends TreeMap<String, String> {
 
     public ReportFieldsMap() {
-        for (int i = 0; i < Constant.FIELD_CODE_LIST.length; i++) {
+        for (int i = 0; i < Constant.FIELD_CODE_LIST.length ; i++) {
             put(Constant.FIELD_CODE_LIST[i], null);
         }
     }

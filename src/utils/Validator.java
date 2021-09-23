@@ -13,13 +13,12 @@ public class Validator {
 
     public static String trimParentheses(String input) {
         if (input.length() != 0) {
-            if (input.charAt(0) == '(') {
-                input = input.substring(1);
-            }
-            if (input.charAt(input.length() - 1) == ')') {
-                input = input.substring(0, input.length() - 2);
-            }
+            return input.replace("(", "").replace(")", "");
         }
         return input;
+    }
+    
+    public static String getNonDotNumString(String input) {
+        return input.replace(".", "").replace(",", "");
     }
 }
