@@ -31,28 +31,28 @@ import utils.XLSXParser;
  */
 public class ParseManager {
 
-    public ArrayList<Company> companies = new ArrayList<>();
+    public final ArrayList<Company> companies = new ArrayList<>();
     public Comparator<Report> byYearMonth = (Report r1, Report r2)
             -> r1.monthYearPeriod.compareTo(r2.monthYearPeriod);
 
     public ParseManager() {
-        companies.add(new Company("PLP", "PLP"));
-        companies.add(new Company("PLX", "PLX"));
+//        companies.add(new Company("PLP", "PLP"));
+//        companies.add(new Company("PLX", "PLX"));
     }
 
-    public void writeAllCompanyReport() {
+    public void getAllComapnyReports() {
         for (int i = 0; i < companies.size(); i++) {
             //./financial_data\\PLP\\csv
-            final File folder = new File(String.format("%s/%s/csv", Constant.ROOT_PATH, companies.get(i).stockSymbol));
+            final File folder = new File(String.format("%s/%s/csv",
+                    Constant.ROOT_PATH, companies.get(i).stockSymbol));
+            System.out.printf("Getting from %s...", companies.get(i).name);
             File[] list = folder.listFiles();
             for (File file : list) {
                 if (file.isFile()) {
                     System.out.println(file.getName());
                     companies.get(i).reportList.add(XLSXParser.reportFromFileName(file.getName()));
-                    System.out.println("");
                 }
             }
-//            System.out.println(companies.get(i).reportList);
             companies.get(i).reportList.sort(byYearMonth);
         }
     }
@@ -80,35 +80,32 @@ public class ParseManager {
                 }
                 listCodeInOrder.add(value);
             }
-            //list code tested, not wrong
-//            System.out.println("list code " +  listCodeInOrder);
             fis.close();
 
             //write to result file
-            wb = new XSSFWorkbook();
-            sheet = wb.createSheet();
+//            wb = new XSSFWorkbook();
+//            sheet = wb.createSheet();
+            sheet = wb.getSheetAt(2);
             Row row;
             Cell cell;
-            row = sheet.createRow(2);
+//            row = sheet.createRow(2);
             int currentRow = 2;
-            for (int i = 0; i < listCodeInOrder.size(); i++) {
-                cell = row.createCell(i + 2);
-                cell.setCellValue(listCodeInOrder.get(i));
-            }
+//            for (int i = 0; i < listCodeInOrder.size(); i++) {
+//                cell = row.createCell(i + 2);
+//                cell.setCellValue(listCodeInOrder.get(i));
+//            }
 
             for (int i = 0; i < companies.size(); i++) {
                 List<Report> reportList = companies.get(i).reportList;
-//                System.out.println(reportList);
                 for (int k = 0; k < reportList.size(); k++) {
                     row = sheet.createRow(++currentRow);
                     cell = row.createCell(0);
                     cell.setCellValue(reportList.get(k).stockSymbol);
                     cell = row.createCell(1);
                     cell.setCellValue(reportList.get(k).monthYearPeriod.format(DateTimeFormatter.ofPattern("MMyyyy")));
-                    for (int f = 0; f < listCodeInOrder.size() ; f++) {
+                    for (int f = 0; f < listCodeInOrder.size(); f++) {
                         String findingKey = listCodeInOrder.get(f);
                         cell = row.createCell(f + 2);
-//                        System.out.println(reportList.get(k).detailData.get(findingKey));
                         if (reportList.get(k).detailData.get(findingKey) == null
                                 || reportList.get(k).detailData.get(findingKey).equals("")) {
                             cell.setCellValue("0");
@@ -118,7 +115,7 @@ public class ParseManager {
                     }
                 }
             }
-            try (FileOutputStream outputStream = new FileOutputStream("test.xlsx")) {
+            try (FileOutputStream outputStream = new FileOutputStream(dataPath)) {
                 wb.write(outputStream);
             }
         } catch (FileNotFoundException ex) {

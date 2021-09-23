@@ -26,9 +26,9 @@ public class Test {
 //        System.out.println(r.dataPath);
 //        System.out.println(r.detailData.keySet());
 //        XLSXParser.parseToMap("D:\\Programming\\#Java\\Projects\\FinancialAutoReport\\financial_data\\PLP\\csv\\PLP_122020.xlsx");
-        ParseManager pm = new ParseManager();
-        pm.writeAllCompanyReport();
-        pm.writeDataToMainFile("D:\\Programming\\#Java\\Projects\\FinancialAutoReport\\financial_data\\result.xlsx");
+//        ParseManager pm = new ParseManager();
+//        pm.getAllComapnyReports();
+//        pm.writeDataToMainFile("D:\\Programming\\#Java\\Projects\\FinancialAutoReport\\financial_data\\result.xlsx");
     }
 
 //Validator test
