@@ -1,5 +1,5 @@
 # Financial Report Parser
-A dummy project to extract data from financial reports companies, in demand MAX291's assignment; then aggregate them into 1 result file.
+A dummy project to extract data from financial reports companies, in demand MAX291's assignment; then aggregate them into 1 result file. I use core Java with a Java library call `Apache POI`, which bring us various methods to handle with spreadsheet file formats.
 # How to use
 `Step 1`: Clone this project to your machine.<br>
 `Step 2`: Screenshot tables from the reports then extract its data to an `.xlsx` file (here I use [Nanonets](app.nanonets.com)).<br>
