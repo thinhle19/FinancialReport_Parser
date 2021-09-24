@@ -11,13 +11,14 @@ package utils;
  */
 public class Validator {
 
+    //number with parentheses is negative num
     public static String trimParentheses(String input) {
         if (input.length() != 0) {
-            return input.replace("(", "").replace(")", "");
+            return "-".concat(input.replace("(", "").replace(")", ""));
         }
         return input;
     }
-    
+
     public static String getNonDotNumString(String input) {
         return input.replace(".", "").replace(",", "");
     }

@@ -41,11 +41,11 @@ public class XLSXParser {
             int valueColumnIndex = (int) sheet.getRow(0).getCell(1).getNumericCellValue();
             System.out.println(codeColumnIndex + " " + valueColumnIndex);
             for (int i = 1; i < sheet.getLastRowNum(); i++) {
-                String fieldCode
-                        = Validator.trimParentheses(sheet.getRow(i).getCell(codeColumnIndex - 1).getStringCellValue());
-//                System.out.println("raw " + fieldCode);
-                String fieldValue = Validator.trimParentheses(sheet.getRow(i).getCell(valueColumnIndex - 1).getStringCellValue());
-                //in case special key like 01, 02, 03 => convert back to 1, 2, 3...
+//                String fieldCode
+//                        = Validator.trimParentheses(sheet.getRow(i).getCell(codeColumnIndex - 1).getStringCellValue());
+//                String fieldValue = Validator.trimParentheses(sheet.getRow(i).getCell(valueColumnIndex - 1).getStringCellValue());
+                String fieldCode = sheet.getRow(i).getCell(codeColumnIndex - 1).getStringCellValue();
+                String fieldValue = sheet.getRow(i).getCell(valueColumnIndex - 1).getStringCellValue();
                 if (fieldCode.equals("411")) {
                     fieldCode = "411a";
                 } else if (fieldCode.equals("01")) {

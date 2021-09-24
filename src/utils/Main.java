@@ -1,7 +1,6 @@
 package utils;
 
 import java.util.Scanner;
-import models.Company;
 import models.ParseManager;
 
 /*
