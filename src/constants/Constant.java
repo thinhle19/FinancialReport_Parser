@@ -12,7 +12,6 @@ package constants;
 public class Constant {
     public static final String ROOT_PATH = "./financial_data";
     public static final int FIELD_NUM = 26;
-    public static final String API_KEY = "p8hFJTY3E7C3G23IP4AW7PRx7i3NXKq2rJxojz0h";
 
     public static final String CURRENT_ASSETS_100 = "100";
     public static final String CASH_111 = "111";
